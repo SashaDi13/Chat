@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "account", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="flex flex-col">
+    <div class="flex flex-row justify-end max-h-screen border-b bg-yankees-blue border-charcoal-gray">
+      <%= render 'account/shared/current_user' %>
+    </div>
+    <div class="flex flex-row max-h-screen">
+      <div class="flex flex-initial w-1/5">
+        <%= render "account/shared/sidebar"%>
+      </div>
+      <main class="flex w-4/5 h-screen bg-charcoal-gray">
+        <%= yield %>
+      </main>
+    </div>
+    <%= any_login_here if defined?(AnyLogin)%>
+  </body>
+</html>

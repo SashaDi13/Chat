@@ -1,0 +1,14 @@
+
+@layer components {
+  .input-field {
+    @apply rounded-lg text-sm text-white font-medium bg-yankees-blue border-none focus:caret-manatee-purple focus:shadow-none focus:ring-0 focus:border-manatee-purple max-h-8 py-2.5 pl-4 block w-full;
+  }
+
+  .input-label {
+    @apply text-xs font-medium text-manatee-purple;
+  }
+
+  .submit-button {
+    @apply relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md bg-ultramarine-blue hover:bg-celtic-blue focus:bg-celtic-blue;
+  }
+}

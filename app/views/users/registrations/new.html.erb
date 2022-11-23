@@ -1,0 +1,48 @@
+<div class="px-5 pb-5 rounded-lg shadow-lg pt-14 border-1 bg-charcoal-gray w-80">
+  <div class="flex flex-col justify-center">
+    <h2 class="text-xl font-medium text-center text-platinum">Sign Up</h2>
+
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "space-y-4", data: { turbo: false }}) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :username,
+                  required: false,
+                  autofocus: true,
+                  label: "Username",
+                  label_html: { class: "input-label" },
+                  placeholder: "username",
+                  input_html: { autocomplete: "email",
+                                class: "input-field" } %>
+
+      <%= f.input :email,
+                  required: false,
+                  autofocus: true,
+                  label: "Email",
+                  label_html: { class: "input-label" },
+                  placeholder: "email",
+                  input_html: { autocomplete: "email",
+                                class: "input-field" } %>
+      <%= f.input :password,
+                  required: false,
+                  label: "Password",
+                  label_html: { class: "input-label" },
+                  placeholder: "********",
+                  input_html: { autocomplete: "email",
+                                class: "input-field" } %>
+      <%= f.input :password_confirmation,
+                  required: false,
+                  label: "Repeat password",
+                  label_html: { class: "input-label" },
+                  placeholder: "********",
+                  input_html: { autocomplete: "email",
+                                class: "input-field" } %>
+
+      <div class="!mt-32">
+      <%= f.button :submit, "Sign up", class: "submit-button group" %>
+      </div>
+    <% end %>
+
+    <div class="flex flex-row justify-center">
+      <%= render "users/shared/links" %>
+    </div>
+  </div>
+</div>

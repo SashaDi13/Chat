@@ -1,0 +1,9 @@
+@layer components {
+  .btn-blue {
+    @apply font-black text-lg text-white text-center bg-sky-600 py-2 px-7 rounded-md hover:bg-sky-800 focus:bg-sky-800;
+  }
+
+  .btn-outline-black {
+    @apply font-proxima-nova font-black uppercase p-3.5 text-xl border-[3px] border-black rounded-lg hover:shadow-medium-bottom focus:shadow-medium-bottom;
+  }
+}

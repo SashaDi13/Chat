@@ -14,6 +14,9 @@ gem "puma", "~> 5.0"
 gem "importmap-rails"
 
 gem 'meta-tags'
+gem 'any_login'
+
+gem 'friendly_id', '~> 5.4.0'
 
 gem 'dotenv-rails', require: 'dotenv/rails-now'
 
@@ -27,6 +30,10 @@ gem "tailwindcss-rails"
 gem "tailwindcss_merger", "~> 0.2.1"
 
 gem "jbuilder"
+
+gem "carrierwave"
+
+gem 'mini_magick'
 
 # Use Redis adapter to run Action Cable in production
 gem "redis", "~> 4.0"
@@ -49,7 +56,7 @@ gem 'simple_form'
 gem 'simple_form-tailwind'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

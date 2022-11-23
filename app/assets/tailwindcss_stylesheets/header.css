@@ -1,0 +1,16 @@
+@layer components {
+  .active-menu-tab, .hover-menu-tab {
+    @apply text-teal-500;
+  }
+
+  .header-text {
+    @apply font-proxima-nova text-sm font-bold;
+  }
+
+  .header-menu-link {
+    @apply hover:hover-menu-tab focus:hover-menu-tab uppercase;
+  }
+  .header-menu-item {
+    @apply lg:pr-4 xl:pr-16;
+  }
+}
