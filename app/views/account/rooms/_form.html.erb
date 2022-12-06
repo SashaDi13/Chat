@@ -1,0 +1,15 @@
+<%= simple_form_for @room, html: { class: "room-form", data: { controller: "avatar" } } do |f| %>
+
+  <div class="relative w-20 h-20 mx-auto mb-3 empty-avatar" data-avatar-target="avatar">
+    <%= f.input :avatar, as: :file, label: raw(inline_svg_tag "upload-image.svg", class: "avatar-field"), input_html: { class: 'hidden', data: { action: 'change->avatar#handlePictureUpload'} } %>
+    <%= f.input :avatar_cache, as: :hidden %>
+  </div>
+
+
+  <%= f.input :name, label: "Room name",
+                  label_html: { class: "input-lg-label" },
+                  placeholder: "Name",
+                  required: false,
+                  input_html: { class: "input-lg-field !bg-charcoal-gray" }  %>
+  <%= f.button :submit, "" %>
+<% end %>

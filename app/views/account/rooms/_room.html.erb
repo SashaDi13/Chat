@@ -1,0 +1,14 @@
+<div class="flex flex-row items-center justify-between border-b border-charcoal-gray" id="<%= dom_id room %>">
+  <div>
+    <%= link_to room_path(@current_user, room), class: "flex-center inline-chat rooms-name" do %>
+      <%= avatar(room) %>
+      <div class="ml-4 message-text">
+        <p class="my-auto font-semibold"><%= room.name %></p>
+      </div>
+    <% end %>
+  </div>
+  <% if @room.avatar.present? %>
+    <div class="relative mx-auto w-[125px] h-[125px] <%= "bg-[#{@room.avatar.url}]" %> mb-3" data-avatar-target="avatar">
+    </div>
+  <% end %>
+</div>

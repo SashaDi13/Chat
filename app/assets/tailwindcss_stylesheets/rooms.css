@@ -1,0 +1,41 @@
+@layer components {
+  .message-box {
+    @apply p-3 my-4 rounded-t-lg w-max lg:w-1/2 xl:w-1/4;
+  }
+
+  .message-box-current_user {
+    @apply rounded-l-lg bg-yankees-blue;
+  }
+
+  .message-box-other_user {
+    @apply rounded-r-lg bg-indepence-blue;
+  }
+
+  .container-current_user {
+    @apply flex justify-end;
+  }
+
+  .container-other_user {
+    @apply flex items-center justify-start;
+  }
+
+  .message {
+    @apply pt-1;
+  }
+
+  .author {
+    @apply block font-black text-cyan-900;
+  }
+
+  .rooms-name {
+    @apply text-base font-semibold text-white;
+  }
+
+  .room-item {
+    @apply flex items-center justify-between border-b border-charcoal-gray row;
+  }
+
+  .message-text {
+    @apply text-sm font-medium text-platinum;
+  }
+}
