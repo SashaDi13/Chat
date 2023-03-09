@@ -1,7 +1,7 @@
-<div class="w-full">
-  <div class="max-h-screen overflow-y-auto border-gray-300 flex-col-box">
+<div class="w-full overflow-hidden">
+  <div class="max-h-screen overflow-x-hidden overflow-y-auto border-gray-300 flex-col-box">
     <div id="chats">
-      <%= render 'account/rooms/rooms' %>
+      <%= partials_helper(current_user) %>
     </div>
   </div>
 
@@ -16,7 +16,7 @@
     </ul>
   </div>
 
-  <%= button_tag type: "button", class: "fixed right-[1%] lg:left-[20%] xl:left-[21%] bottom-[2%]", data: {action: "click->new-chat-room#toggle"} do %>
+  <%= button_tag type: "button", class: "fixed z-0 right-[1%] lg:left-[20%] xl:left-[21%] bottom-[2%]", data: {action: "click->new-chat-room#toggle"} do %>
     <%= inline_svg_tag "create.svg", class: "w-14 fill-indepence-blue text-white" %>
   <% end %>
 </div>

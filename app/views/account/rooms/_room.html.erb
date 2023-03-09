@@ -1,18 +1,30 @@
-<div class="flex flex-row items-center justify-between border-b border-charcoal-gray" id="<%= dom_id room %>">
-  <div>
-    <%= link_to room_path(@current_user, room), class: "flex-center inline-chat rooms-name" do %>
-      <%= avatar(room) %>
-      <div class="ml-4 message-text">
-        <p class="my-auto font-semibold"><%= room.name %></p>
-        <div class="ml-1 message-text">
-          <%= room.messages.last.content if room.messages.any? %>
+<%= link_to room_path(@current_user, room), remote: true, class: "flex-center inline-chat rooms-name justify-between border-b border-charcoal-gray", id: "#{dom_id(room)}" do %>
+  <% if room.private %>
+    <div>
+      <%= avatar(room.participants.where("user_id != ?", @current_user.id).first.user) %>
+      <div class="translate-x-16 icon-container">
+        <%= turbo_stream_from room.participants.where("user_id != ?", @current_user.id).first.user %>
+        <div>
+          <%= render 'account/users/status', user: room.participants.where("user_id != ?", @current_user.id).first.user %>
         </div>
       </div>
-    <% end %>
-  </div>
-  <span class="px-5 py-3 text-sm text-rhythm-gray"><%= message_time(room.messages.last) if room.messages.any? %></span>
-  <% if @room.avatar.present? %>
-    <div class="relative mx-auto w-[125px] h-[125px] <%= "bg-[#{@room.avatar.url}]" %> mb-3" data-avatar-target="avatar">
+    </div>
+    <div class="flex flex-col w-[70%] pl-3">
+      <p class="my-auto font-semibold"><%= room.participants.where("user_id != ?", @current_user).first.user.username %></p>
+      <span id="<%= dom_id(room) %>-message" class="pl-1 truncate message-text">
+        <%= room.messages.last.content if room.messages.any? %>
+      </span>
+    </div>
+  <% else %>
+    <div class="flex w-[70%]">
+      <%= avatar(room) %>
+      <div class="pl-3 truncate message-text">
+        <p class="my-auto font-semibold"><%= room.name %></p>
+          <span id="<%= dom_id(room) %>-message" class="pl-1">
+            <%= room.messages.last.content if room.messages.any? %>
+          </span>
+      </div>
     </div>
   <% end %>
-</div>
+  <span class="px-5 py-3 text-sm text-rhythm-gray"><%= message_time(room.messages.last) if room.messages.any? %></span>
+<% end %>

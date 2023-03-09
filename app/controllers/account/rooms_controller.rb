@@ -2,7 +2,7 @@ class Account::RoomsController < Account::AccountController
   after_action :set_status
 
   def index
-    @rooms = collection
+    @rooms = rooms
     @users = User.all_except(current_user)
     @current_user = current_user
     @room = Room.new
@@ -16,9 +16,9 @@ class Account::RoomsController < Account::AccountController
     @room = Room.new
     @users = User.all_except(current_user)
     @current_room = resource
-    @rooms = collection
+    @rooms = rooms
     @message = Message.new
-    @messages = @current_room.messages
+    @messages = @current_room.messages.order(updated_at: :desc)
   end
 
   def edit
@@ -45,10 +45,6 @@ class Account::RoomsController < Account::AccountController
   end
 
   private
-    def collection
-      current_user.rooms
-    end
-
     def resource
       Room.friendly.find(params[:id])
     end

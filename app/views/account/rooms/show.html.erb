@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center w-full mx-auto" data-controller="scroll">
+<div class="flex flex-col items-center w-full mx-auto">
 
   <div class="flex self-center w-full py-5 pl-2 border-l group lg:pl-5 bg-yankees-blue border-charcoal-gray">
     <!-- MOBILE MENU -->
@@ -10,15 +10,26 @@
         <svg class="hidden w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
       <% end %>
     </div>
-    <%= avatar(@current_room) %>
-    <p class="pl-3 my-auto rooms-name"><%= @current_room.name %></p>
+
+    <% if @current_room.private %>
+      <%= avatar(@current_room.participants.where("user_id != ?", @current_user).first.user) %>
+      <div class="icon-container">
+        <%= turbo_stream_from @current_room.participants.where("user_id != ?", @current_user.id).first.user %>
+        <div>
+          <%= render 'account/users/status', user: @current_room.participants.where("user_id != ?", @current_user.id).first.user %>
+        </div>
+      </div>
+    <% else %>
+      <%= avatar(@current_room) %>
+    <% end %>
+    <p class="pl-3 my-auto rooms-name"><%= @current_room.private ? @current_room.participants.where("user_id != ?", @current_user).first.user.username : @current_room.name %></p>
   </div>
 
   <div class="flex flex-col flex-auto w-3/4 py-5 pl-5 pr-1 mx-auto overflow-y-scroll scrollbar">
     <%= render "account/messages/messages", current_room: @current_room %>
   </div>
 
-  <div class="w-3/4 mx-auto">
+  <div class="w-3/4 mx-auto mb-4">
     <%= render 'account/messages/form' %>
   </div>
 </div>

@@ -1,0 +1,8 @@
+<div class="flex flex-col bg-yankees-blue">
+  <%= turbo_stream_from @users %>
+  <div id="users">
+    <% @users.each do |user| %>
+      <%= render "account/users/user", user: user %>
+    <% end %>
+  </div>
+</div>
