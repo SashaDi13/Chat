@@ -21,4 +21,15 @@ class User < ApplicationRecord
   after_initialize do |_config|
     User.update_all(status: User.statuses[":offline"])
   end
+
+  def status_to_css
+    case status
+    when ":online"
+      'online'
+    when ":away"
+      'away'
+    when ":offline"
+      'offline'
+    end
+  end
 end

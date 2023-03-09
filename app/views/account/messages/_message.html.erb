@@ -3,7 +3,7 @@
       <%= avatar(message.user, "text-base translate-y-4 max-w-[35px] max-h-[35px] mr-1.5 #{@current_user ==  message.user ? 'hidden' : '' }") %>
       <div class="message-box <%= @current_user ==  message.user ? 'message-box-current_user' : 'message-box-other_user'%>">
         <p class="message-text"><%= message.content %></p>
-        <span class="px-1 text-sm text-gray-700 bottom-1.5 right-2 text-rhythm-gray translate-y-1/2"><%= DateTime.parse(message.created_at.to_s).strftime("%H:%M") %></span>
+        <span class="px-1 text-sm text-gray-700 bottom-1.5 right-2 text-rhythm-gray translate-y-1/2"><%= message_time(message) %></span>
       </div>
   <% end %>
 

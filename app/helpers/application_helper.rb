@@ -1,4 +1,18 @@
 module ApplicationHelper
+  def partials_helper(current_user)
+    if current_page?(new_room_path(current_user))
+      render partial: 'account/rooms/form'
+    elsif current_page?(users_path(current_user))
+      render partial: 'account/users/users'
+    else
+      render 'account/rooms/rooms'
+    end
+  end
+
+  def message_time(message)
+    DateTime.parse(message.created_at.to_s).strftime("%H:%M")
+  end
+
   def avatar(room, *classes)
     if !room.avatar.blank?
       image_tag(room.avatar.url, class: "rounded-full w-14 h-14 #{classes.join(' ')}")
