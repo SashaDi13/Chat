@@ -1,0 +1,4 @@
+<%= turbo_stream.append "messages", @message %>
+<%= turbo_stream.replace "rooms", partial: "account/rooms/rooms", locals: { rooms: @rooms } %>
+<%= turbo_stream.replace "messages", partial: "account/messages/messages", locals: { messages: @current_room.messages.order(updated_at: :desc) } %>
+<%= turbo_stream.replace "#{dom_id(@message.room)}-message", content_tag(:span, @message.content, id:  "#{dom_id(@message.room)}-message") %>

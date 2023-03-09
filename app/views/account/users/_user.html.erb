@@ -1,0 +1,12 @@
+<div class="flex justify-between border-b border-charcoal-gray row"  id="<%= dom_id user %>">
+  <%= link_to user_path(@current_user, user), class: "inline-chat rooms-name flex" do %>
+    <%= avatar(user) %>
+    <div class="icon-container">
+      <%= turbo_stream_from user %>
+      <div>
+        <%= render 'account/users/status', user: user %>
+      </div>
+    </div>
+      <p class="my-auto ml-3 font-semibold"><%= user.username %></p>
+  <% end %>
+</div>

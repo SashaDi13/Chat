@@ -1,0 +1,9 @@
+@layer components {
+  .footer-box {
+    @apply pb-8 lg:p-0;
+  }
+
+  .footer-icon-box {
+    @apply w-8 h-8 m-1;
+  }
+}

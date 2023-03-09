@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ChatApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "account", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="flex flex-col" data-controller="new-chat-room messages" data-new-chat-room-hide-class="hidden">
+    <div class="flex flex-row justify-end border-b bg-yankees-blue border-charcoal-gray">
+      <%= render 'account/shared/current_user' %>
+    </div>
+    <div class="flex flex-row max-h-screen">
+      <div class="hidden w-1/4 h-screen basis-full lg:flex lg:flex-initial lg:basis-1/4 bg-yankees-blue"  data-new-chat-room-target="sidebar">
+        <%= render "account/shared/sidebar"%>
+      </div>
+      <main class="z-10 flex w-3/4 h-screen basis-full lg:basis-3/4 bg-charcoal-gray" data-new-chat-room-target="room">
+        <%= yield %>
+      </main>
+    </div>
+    <%= any_login_here if defined?(AnyLogin)%>
+  </body>
+</html>

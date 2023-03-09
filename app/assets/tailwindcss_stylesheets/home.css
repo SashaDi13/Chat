@@ -1,0 +1,33 @@
+@layer components {
+  .responsive-container {
+    @apply max-w-90 px-4 sm:px-16 lg:px-28 mx-auto;
+  }
+
+  .text-description {
+    @apply text-charcoal-gray text-lg;
+  }
+
+  .text-subtitle {
+    @apply font-proxima-nova font-black text-2xl;
+  }
+
+  .block-title {
+    @apply -translate-y-1/2 text-apple-green font-proxima-nova uppercase text-4xl font-black leading-70 absolute align-top;
+  }
+
+  .text-gray {
+    @apply text-gray-boulder text-lg;
+  }
+
+  .flex-responsive {
+    @apply flex flex-col md:flex-row;
+  }
+
+  .text-title {
+    @apply font-proxima-nova text-charcoal-gray font-bold text-3xl;
+  }
+
+  .link-transition {
+    @apply transition delay-75 ease-in;
+  }
+}

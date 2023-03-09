@@ -1,0 +1,22 @@
+<div class="w-full overflow-hidden">
+  <div class="max-h-screen overflow-x-hidden overflow-y-auto border-gray-300 flex-col-box">
+    <div id="chats">
+      <%= partials_helper(current_user) %>
+    </div>
+  </div>
+
+  <div class="hidden add-chat-items fixed bottom-[8%] right-[8%] sm:right-[7%] md:right-[5%] lg:left-[7%] xl:left-[10%]" data-new-chat-room-target="toggleable">
+    <ul class="py-3">
+      <li class="add-chat-item">
+        <%= link_to "New private chat", users_path(current_user), remote: true %>
+      </li>
+      <li class="add-chat-item">
+        <%= link_to "New public chat", new_room_path(current_user), remote: true %>
+      </li>
+    </ul>
+  </div>
+
+  <%= button_tag type: "button", class: "fixed z-0 right-[1%] lg:left-[20%] xl:left-[21%] bottom-[2%]", data: {action: "click->new-chat-room#toggle"} do %>
+    <%= inline_svg_tag "create.svg", class: "w-14 fill-indepence-blue text-white" %>
+  <% end %>
+</div>

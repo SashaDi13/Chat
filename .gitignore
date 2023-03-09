@@ -25,7 +25,9 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
+/public/
+
+/node_modules
 
 /spec
 
@@ -38,4 +40,4 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
-!/app/assets/stylesheets/application.tailwind.css
+/app/assets/stylesheets/application.tailwind.css

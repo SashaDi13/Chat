@@ -1,0 +1,13 @@
+@layer components {
+  .add-chat {
+    @apply w-full -bottom-[85%] right-8;
+  }
+
+  .add-chat-items {
+    @apply p-1 transition-transform duration-700 ease-in-out rounded-md shadow-lg bg-indepence-blue w-max ring-1 ring-black ring-opacity-5 focus:outline-none;
+  }
+
+  .add-chat-item {
+    @apply px-5 py-2 text-center text-white bg-indepence-blue focus:bg-yankees-blue focus:font-semibold hover:font-semibold;
+  }
+}

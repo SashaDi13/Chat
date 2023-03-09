@@ -1,0 +1,30 @@
+
+@layer components {
+  .room-form {
+    @apply space-y-4 flex flex-col justify-center !w-3/4 mx-auto text-center;
+  }
+
+  .input-field {
+    @apply rounded-lg text-sm text-white font-medium bg-yankees-blue border-none focus:caret-manatee-purple focus:shadow-none focus:ring-0 focus:border-manatee-purple max-h-8 py-2.5 pl-4 block w-full;
+  }
+
+  .input-lg-field {
+    @apply rounded-lg text-lg text-white font-medium bg-yankees-blue border-none focus:caret-manatee-purple focus:shadow-none focus:ring-0 focus:border-manatee-purple max-h-12 py-2.5 pl-4 block w-full;
+  }
+
+  .avatar-field {
+    @apply fill-white cursor-pointer w-14 h-14 inset-[12%] absolute;
+  }
+
+  .input-label {
+    @apply text-xs font-medium text-manatee-purple;
+  }
+
+  .input-lg-label {
+    @apply text-lg font-medium text-manatee-purple;
+  }
+
+  .submit-button {
+    @apply relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md bg-ultramarine-blue hover:bg-celtic-blue focus:bg-celtic-blue;
+  }
+}

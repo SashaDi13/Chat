@@ -1,0 +1,29 @@
+@layer components {
+  .empty-avatar {
+    @apply flex justify-center items-center w-[47px] h-[47px] text-lg leading-5 rounded-full bg-liberty-blue text-white text-center;
+  }
+
+  .time {
+    @apply py-0 my-0;
+  }
+
+  .icon-container {
+    @apply relative z-10 translate-x-2 translate-y-2 w-fit;
+  }
+
+  .status-circle {
+    @apply w-3.5 h-3.5 rounded-full bg-gray-400 border-2 border-white bottom-2.5 right-2.5 absolute;
+  }
+
+  .online {
+    @apply bg-emerald-500;
+  }
+
+  .away {
+    @apply bg-amber-400;
+  }
+
+  .offline {
+    @apply bg-gray-600;
+  }
+}

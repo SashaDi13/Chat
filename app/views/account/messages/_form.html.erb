@@ -1,0 +1,18 @@
+<%= simple_form_for [@current_room, @message],
+                    url: room_messages_path(current_user, @current_room.id),
+                    html: { class: "message-form-container" },
+                    data: { controller: "reset-form",
+                            messages_target: "newMessage",
+                            action: "turbo:submit-end->reset-form#reset turbo:submit-end->scroll#resetScroll",
+                            turbo_frame: dom_id(@message)},
+                    method: :post do |f| %>
+  <div class="mr-5">
+    <%= f.input :image, as: :file, label: raw(inline_svg_tag "upload_files.svg", class: "fill-ultramarine-blue cursor-pointer"), input_html: { hidden: true } %>
+  </div>
+  <div class="w-full mr-5">
+    <%= f.input :content, label: false, input_html: { class: "input-lg-field", placeholder: "Message...", rows: 1 } %>
+  </div>
+  <%= button_tag type: :submit, class: "flex-initial", data: { action: "submit->messages#submit" } do %>
+    <%= inline_svg_tag "send.svg", class: "fill-ultramarine-blue" %>
+  <% end %>
+<% end %>

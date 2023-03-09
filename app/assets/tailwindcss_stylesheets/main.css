@@ -1,0 +1,13 @@
+@layer components {
+  .flex-col-box {
+    @apply flex flex-col justify-between;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .inline-chat {
+    @apply px-5 py-3;
+  }
+}
