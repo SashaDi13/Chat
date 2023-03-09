@@ -1,6 +1,6 @@
 @layer components {
   .message-box {
-    @apply p-3 my-4 rounded-t-lg w-max lg:w-1/2 xl:w-1/4;
+    @apply flex items-end p-3 my-4 rounded-t-lg max-w-[75%];
   }
 
   .message-box-current_user {
@@ -36,6 +36,6 @@
   }
 
   .message-text {
-    @apply text-sm font-medium text-platinum;
+    @apply text-sm font-medium break-all text-platinum;
   }
 }

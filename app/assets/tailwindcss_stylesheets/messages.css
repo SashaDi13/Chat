@@ -1,0 +1,17 @@
+@layer components {
+  .message-form-container {
+    @apply flex items-center bg-yankees-blue px-5 rounded-3xl pb-2.5 pt-4 border-l border-charcoal-gray;
+  }
+
+  .message-time {
+    @apply absolute bottom-3 text-white rounded-xl bg-neutral-600/50 py-0.5 px-2;
+  }
+
+  .current-message-label {
+    @apply right-[1%];
+  }
+
+  .other-message-label {
+    @apply left-[27%];
+  }
+}

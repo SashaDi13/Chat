@@ -1,0 +1,7 @@
+<% messages = @messages ? @messages : messages %>
+<%= turbo_stream_from 'messages'%>
+<div id="messages" class="flex flex-col-reverse pr-5 overflow-y-scroll scrollbar-thin scrollbar-thumb-yankees-blue scrollbar-track-platinum">
+  <% messages.each do |message| %>
+    <%= render "account/messages/message", message: message %>
+  <% end %>
+</div>

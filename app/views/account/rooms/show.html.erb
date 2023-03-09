@@ -1,4 +1,4 @@
-<div class="flex flex-col items-center w-full mx-auto">
+<div class="flex flex-col items-center w-full mx-auto" data-controller="scroll">
 
   <div class="flex self-center w-full py-5 pl-2 border-l group lg:pl-5 bg-yankees-blue border-charcoal-gray">
     <!-- MOBILE MENU -->
@@ -12,5 +12,13 @@
     </div>
     <%= avatar(@current_room) %>
     <p class="pl-3 my-auto rooms-name"><%= @current_room.name %></p>
+  </div>
+
+  <div class="flex flex-col flex-auto w-3/4 py-5 pl-5 pr-1 mx-auto overflow-y-scroll scrollbar">
+    <%= render "account/messages/messages", current_room: @current_room %>
+  </div>
+
+  <div class="w-3/4 mx-auto">
+    <%= render 'account/messages/form' %>
   </div>
 </div>

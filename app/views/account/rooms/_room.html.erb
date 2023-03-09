@@ -4,9 +4,13 @@
       <%= avatar(room) %>
       <div class="ml-4 message-text">
         <p class="my-auto font-semibold"><%= room.name %></p>
+        <div class="ml-1 message-text">
+          <%= room.messages.last.content if room.messages.any? %>
+        </div>
       </div>
     <% end %>
   </div>
+  <span class="px-5 py-3 text-sm text-rhythm-gray"><%= message_time(room.messages.last) if room.messages.any? %></span>
   <% if @room.avatar.present? %>
     <div class="relative mx-auto w-[125px] h-[125px] <%= "bg-[#{@room.avatar.url}]" %> mb-3" data-avatar-target="avatar">
     </div>

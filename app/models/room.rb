@@ -9,6 +9,7 @@ class Room < ApplicationRecord
   friendly_id :slug_name, use: :slugged
 
   belongs_to :user, required: false
+  has_many :messages
 
   validates :name, presence: true, uniqueness: true
 end

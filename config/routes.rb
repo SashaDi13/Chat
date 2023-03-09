@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   scope "/:slug", module: 'account' do
     root to: 'rooms#index', as: :authenticated_root
-    resources :rooms
+    resources :rooms do
+      resources :messages, only: [:create, :new]
+    end
+
+    resources :users
   end
 end
