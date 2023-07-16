@@ -1,0 +1,13 @@
+@layer components {
+  .add-chat-item {
+    @apply px-8 py-3 text-center rounded-lg focus:bg-yankees-blue focus:font-semibold hover:font-semibold hover:bg-yankees-blue;
+  }
+
+  .burger-menu {
+    @apply inline-flex items-center p-2 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white;
+  }
+
+  .configs {
+    @apply absolute flex flex-col text-xs text-center text-white border rounded-lg w-fit left-3 top-14 bg-indepence-blue border-indepence-blue;
+  }
+}
