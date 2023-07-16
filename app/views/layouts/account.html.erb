@@ -7,17 +7,19 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "account", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="justify-center min-h-screen flex-col-box bg-yankees-blue">
-    <main class="container flex items-center justify-center px-5 mx-auto">
+  <body class="bg-charcoal-gray">
+    <main class="flex h-screen">
       <%= render 'shared/flash' %>
       <%= turbo_frame_tag :flash %>
+      <div class="w-full h-full md:w-2/5 xl:w-1/4 bg-yankees-blue">
+        <%= render "account/shared/sidebar"%>
+      </div>
       <%= yield %>
     </main>
-
     <%= any_login_here if defined?(AnyLogin)%>
   </body>
 </html>

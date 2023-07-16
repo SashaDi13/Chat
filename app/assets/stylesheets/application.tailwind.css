@@ -3,3 +3,123 @@
 @tailwind components;
 @tailwind utilities;
 
+/* fonts.css */
+@layer base {
+  @font-face {
+    font-family: Open Sans;
+    src: url("OpenSans-Bold.ttf") format("TrueType");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Open Sans;
+    src: url("OpenSans-Regular.ttf") format("TrueType");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Proxima Nova;
+    src: url("ProximaNova-Black.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Proxima Nova;
+    src: url("ProximaNova-Xbold.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Proxima Nova;
+    src: url("ProximaNova-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: Proxima Nova;
+    src: url("ProximaNova-Reg.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }    
+}
+
+/* form.css */
+
+@layer components {
+  .input-field {
+    @apply rounded-lg mt-2 text-sm text-white font-medium bg-yankees-blue border-none focus:caret-manatee-purple focus:shadow-none focus:ring-0 focus:border-manatee-purple max-h-8 py-2.5 pl-4 block w-full;
+  }
+
+  .input-label {
+    @apply text-xs font-medium text-manatee-purple;
+  }
+
+  .submit-button {
+    @apply relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md bg-ultramarine-blue hover:bg-celtic-blue focus:bg-celtic-blue;
+  }
+}
+
+/* main.css */
+@layer components {
+  .flex-col-box {
+    @apply flex flex-col justify-between;
+  }
+
+  .flash {
+    @apply fixed text-red-600 bg-white rounded-md right-5 top-12 animate-flash p-2.5;
+  }
+}
+
+
+@layer utilities {
+  @keyframes showMd {
+    from { right: -100%; }
+    to { right: 20px; }
+  }
+
+  @keyframes hideMd {
+    from { right: 20px; }
+    to { right: -100%; }
+  }
+
+  @keyframes show {
+    from { left: 100%; right: -100vw; }
+    to { right: 2vw; left: 2vw; }
+  }
+
+  @keyframes hide {
+    from { right: 2vw; left: 2vw; }
+    to { left: 100%; right: -100vw; }
+  }
+
+  .animate-flash {
+    animation: showMd 3s linear forwards, hideMd 5s linear 8s forwards;
+  }
+
+  @media (max-width: 400px) {
+    .animate-flash {
+      animation: show 3s linear forwards, hide 5s linear 8s forwards;
+    }
+  }
+}
+
+/* sidebar.css */
+@layer components {
+  .add-chat-item {
+    @apply px-8 py-3 text-center rounded-lg focus:bg-yankees-blue focus:font-semibold hover:font-semibold hover:bg-yankees-blue;
+  }
+
+  .burger-menu {
+    @apply inline-flex items-center p-2 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white;
+  }
+
+  .configs {
+    @apply absolute flex flex-col text-xs text-center text-white border rounded-lg w-fit left-3 top-14 bg-indepence-blue border-indepence-blue;
+  }
+}
+

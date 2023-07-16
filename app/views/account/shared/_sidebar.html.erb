@@ -1,0 +1,21 @@
+<div class="border-r border-yankees-blue" data-controller="sidebar" data-sidebar-hide-class="hidden" data-action='click@window->sidebar#toggle'>
+  <!-- HEADER SIDE MENU -->
+
+  <div class="relative p-2 border-b-2 border-charcoal-gray">
+    <div class="inset-y-0 left-0 items-center ml-2">
+      <%= button_tag type: "button", class: "burger-menu", aria_expanded: "false", data: { sidebar_target: "burgerMenu" } do %>
+        <svg class="block w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <svg class="hidden w-6 h-6" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+      <% end %>
+    </div>
+  </div>
+
+  <!-- CONFIGS -->
+
+  <div class="hidden configs" data-sidebar-target="configs">
+      <%= link_to "Settings", "#", remote: true, class: 'add-chat-item' %>
+      <%= link_to "Log out", users_sign_out_path, remote: true, class: 'add-chat-item' %>
+  </div>
+</div>

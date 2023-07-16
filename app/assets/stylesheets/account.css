@@ -12,17 +12,4 @@
  *
  *= require_tree .
  *= require_self
- *= stub application.tailwind.css
  */
-
-.is-invalid, .is-invalid-message {
-  color: #F44D4D;
-}
-
-.is-invalid-message {
-  font-size: 12px;
-}
-
-abbr {
-  text-decoration: none;
-}
