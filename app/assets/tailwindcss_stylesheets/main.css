@@ -1,0 +1,42 @@
+@layer components {
+  .flex-col-box {
+    @apply flex flex-col justify-between;
+  }
+
+  .flash {
+    @apply fixed text-red-600 bg-white rounded-md right-5 top-12 animate-flash p-2.5;
+  }
+}
+
+
+@layer utilities {
+  @keyframes showMd {
+    from { right: -100%; }
+    to { right: 20px; }
+  }
+
+  @keyframes hideMd {
+    from { right: 20px; }
+    to { right: -100%; }
+  }
+
+  @keyframes show {
+    from { left: 100%; right: -100vw; }
+    to { right: 2vw; left: 2vw; }
+  }
+
+  @keyframes hide {
+    from { right: 2vw; left: 2vw; }
+    to { left: 100%; right: -100vw; }
+  }
+
+  .animate-flash {
+    animation: showMd 3s linear forwards, hideMd 5s linear 8s forwards;
+  }
+
+  @media (max-width: 400px) {
+    .animate-flash {
+      animation: show 3s linear forwards, hide 5s linear 8s forwards;
+    }
+  }
+}

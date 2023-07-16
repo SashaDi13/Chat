@@ -9,13 +9,17 @@ gem "sprockets-rails"
 
 gem "pg", "~> 1.1"
 
+gem 'pry'
 gem "puma", "~> 5.0"
 
 gem "importmap-rails"
 
 gem 'meta-tags'
+gem 'any_login'
 
-gem 'dotenv-rails', require: 'dotenv/rails-now'
+gem 'friendly_id', '~> 5.4.0'
+
+gem 'simplecov', require: false, group: :test
 
 gem 'inline_svg'
 
@@ -57,6 +61,11 @@ group :development, :test do
   gem "factory_bot_rails"
   gem 'rails-controller-testing'
   gem "faker"
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem "capybara"
 end
 
 group :development do
