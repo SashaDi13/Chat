@@ -25,6 +25,5 @@ test:
 
 production:
   <<: *default
-  database: <%= ENV['DB_NAME'] %>_production
-  host: localhost
-  port: 5432
+  url: <%= ENV['DATABASE_URL'] %>
+  database: <%= ENV['DB_NAME'] %>_staging
